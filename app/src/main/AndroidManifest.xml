@@ -22,8 +22,8 @@
                 android:name=".PianoActivity"
                 android:screenOrientation="landscape">
         </activity>
-        <activity android:name=".CourseActivity">
-        </activity>
+        <activity android:name=".CourseLevel1Activity"></activity>
+        <activity android:name=".CourseLevel2Activity"></activity>
         <activity
                 android:name=".TheoryActivity"
                 android:label="@string/title_activity_main2"

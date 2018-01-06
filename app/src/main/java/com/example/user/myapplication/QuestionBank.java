@@ -1,5 +1,7 @@
 package com.example.user.myapplication;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -33,7 +35,50 @@ public class QuestionBank {
         return mQuestionList.size();
     }
 
-    public Question generateQuestionsEx11()
+
+
+    private List<Question> generateQuestions(int whichEx)
+    {
+        int i;
+        Question question;
+        List<Question> questionList= new ArrayList<Question>();
+        //Log.i("OC_RSS", "On commence un nouvelle banque de questions");
+        //Le premier nombre c'est le level, le deuxième nombre c'est le numero de l'exercice dans le level
+        switch(whichEx){
+            case 11:{
+                for(i=1;i<=1; i++) {
+                    question = generateQuestionEx11();
+                    questionList.add(question);
+                }
+                return  questionList;}
+
+            case 12:{
+                for(i=1;i<=5; i++) {
+                    question = generateQuestionEx12();
+                    questionList.add(question);
+                }
+                return  questionList;}
+
+            case 13:{
+                for(i=1;i<=10; i++) {
+                    question = generateQuestionEx13();
+                    questionList.add(question);
+                }
+                return  questionList;
+
+            }
+
+            default:{
+                question=new Question("ERROR Le nombre correspondant à l'ex ne mène à rien", 1);
+                questionList.add(question);
+                return  questionList;}
+
+        }
+
+
+    }
+
+    public Question generateQuestionEx11()
     {
         Random rand = new Random();
         //Random note, elles vont de 1 à 12
@@ -41,7 +86,11 @@ public class QuestionBank {
         int  randNote = rand.nextInt(12) + 1;
         int  randNbrSemitone= rand.nextInt(5)+1;
         //%12 car il y a 12 notes en tout
-        Question question=new Question("What is the note which is " + randNbrSemitone+ " semitone(s) after " + nameOfTheNote(randNote)+ "?", (randNote+randNbrSemitone)%12);
+        int answer= (randNote+randNbrSemitone)%12;
+        //Pour éviter la reponse 0 qui est fausse
+        if(answer==0)
+            answer=12;
+        Question question=new Question("What is the note which is " + Integer.toString(randNbrSemitone)+ " semitone(s) after " + nameOfTheNote(randNote)+ "?", answer);
         return question;
     }
 
@@ -66,33 +115,66 @@ public class QuestionBank {
         }
     }
 
-
-
-    private List<Question> generateQuestions(int whichEx)
+    //Jouer la tierce majeure de Do, quinte de do
+    public Question generateQuestionEx12()
     {
-        int i;
-        //Le premier nombre c'est le level, le deuxième nombre c'est le numero de l'exercice dans le level
-        switch(whichEx){
-            case 11:
-                Question question;
-                List<Question> questionList= new ArrayList<Question>();
-                for(i=1;i<=5; i++) {
-                    question = generateQuestionsEx11();
-                    questionList.add(question);
-                }
-                return  questionList;
+            Random rand=new Random();
+            Question question;
+            int i=rand.nextInt(3);
+            switch(i)
+            {
+                case 0:
+                    question= new Question("Play the minor third of Do", 4);
+                    break;
+                case 1:
+                    question= new Question("Play the major third of Do", 5);
+                    break;
+                case 2:
+                    question= new Question("Play the fifth of Do", 8);
+                    break;
+                default:
+                    question= new Question("ERROR PLAY DO", 1);
+                    break;
+            }
+            return question;
+    }
+
+    //Meme que Ex12 mais avec n importe quelle note
+    public Question generateQuestionEx13()
+    {
+        Random rand=new Random();
+        Question question;
+        int i=rand.nextInt(3);
+        int randNote=1+rand.nextInt(12);
+        int answer;
+        switch(i)
+        {
+            case 0:
+                answer= (randNote+3)%12;
+                //Pour éviter la reponse 0 qui est fausse
+                if(answer==0)
+                    answer=12;
+                question= new Question("Play the minor third of " + nameOfTheNote(randNote), answer);
+                break;
+            case 1:
+                answer= (randNote+3)%12;
+                //Pour éviter la reponse 0 qui est fausse
+                if(answer==0)
+                    answer=12;
+                question= new Question("Play the major third of " + nameOfTheNote(randNote), answer);
+                break;
+            case 2:
+                answer= (randNote+3)%12;
+                //Pour éviter la reponse 0 qui est fausse
+                if(answer==0)
+                    answer=12;
+                question= new Question("Play the fifth of " + nameOfTheNote(randNote), answer);
+                break;
             default:
-                Question questionnawak;
-                List<Question> questionListnawak= new ArrayList<Question>();
-                for(i=1;i<=5; i++) {
-                    questionnawak = generateQuestionsEx11();
-                    questionListnawak.add(questionnawak);
-                }
-                return  questionListnawak;
-
+                question= new Question("ERROR PLAY DO", 1);
+                break;
         }
-
-
+        return question;
     }
 }
 

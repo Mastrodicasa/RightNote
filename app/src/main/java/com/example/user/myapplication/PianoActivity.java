@@ -16,6 +16,9 @@ import android.widget.Toast;
 public class PianoActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String BUNDLE_EXERCICE= "BUNDLE_EXERCICE";
+    public static final String BUNDLE_EXTRA_SCORE = "BUNDLE_EXTRA_SCORE";
+
+
 
     private Button mb1;
     private Button mb2;
@@ -86,37 +89,29 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
 
 
         //On récupère de Course activity quel bouton a été appuyé:
-        // car différents boutons envoient vers des cours théoriques différents
+        // car différents boutons envoient vers des exercices différents
         Bundle extras=getIntent().getExtras();
         if (extras!=null)
         {
             //Ce nombre correspond au quantième groupe
             int nbEx=extras.getInt(BUNDLE_EXERCICE);
             mScore=0;
-
-            switch(nbEx){
-
-                case 1:
-                    mQuestionBank=new QuestionBank(11);
-                    mNumberOfQuestions=mQuestionBank.getSize();
-                    mCurrentQuestion = mQuestionBank.getQuestion();
-                    mTextView.setText(mCurrentQuestion.getQuestion());
-                    break;
-                case 2:
-                    mTextView.setText("Tierce majeure de do");
-                    break;
-                case 3:
-                    mTextView.setText("Tierce majeure de la");
-                    break;
-            }
+            //On crée la liste de questions propre à l'exercice demandé
+            mQuestionBank=new QuestionBank(nbEx);
+            //Le nombre de questions pour cet exercice
+            mNumberOfQuestions=mQuestionBank.getSize();
+            //On récupère une question pour savoir le texte à afficher et la bonne réponse
+            mCurrentQuestion = mQuestionBank.getQuestion();
+            //On affiche la question
+            mTextView.setText(mCurrentQuestion.getQuestion());
+        }
+        else
+        {
+            mTextView.setText("ERREUR: CourseLevelXActivity n'a pas renvoyé vers quelle exercice aller");
         }
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
     @Override
     public void onClick(View v) {
@@ -142,19 +137,50 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void endGame() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setTitle("Well done!")
-                .setMessage("Your score is " + mScore)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // End the activity
-                        finish();
-                    }
-                })
-                .setCancelable(false)
-                .create()
-                .show();
+        double ratioGame= (double) mScore/mQuestionBank.getSize();
+        if(ratioGame>=0.8) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Well done!")
+                    .setMessage("Your score is " + mScore + "/" + mQuestionBank.getSize())
+                    .setPositiveButton("Finish", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Fin de l'ex et envoi du score
+                            Intent intent = new Intent();
+                            intent.putExtra(BUNDLE_EXTRA_SCORE, mScore);
+                            setResult(RESULT_OK, intent);
+                            finish();
+                        }
+                    })
+                    .setCancelable(false)
+                    .create()
+                    .show();
+        }
+        else
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Not quite!")
+                    .setMessage("Your score is " + mScore + "/" + mQuestionBank.getSize())
+                    .setPositiveButton("Start again", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //Restart the same activity
+                            recreate();
+                        }
+                    })
+                    .setNegativeButton("Back to courses", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // Fin de l'ex et envoi du score
+                            Intent intent = new Intent();
+                            intent.putExtra(BUNDLE_EXTRA_SCORE, mScore);
+                            setResult(RESULT_OK, intent);
+                            finish();
+                        }
+                    })
+                    .setCancelable(false)
+                    .create()
+                    .show();
+        }
     }
 }

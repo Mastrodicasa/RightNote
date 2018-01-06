@@ -3,7 +3,6 @@ package com.example.user.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -43,12 +42,19 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         int responseIndex = (int) v.getTag();
-        Log.i("OC_RSS", "wesh maggle");
-        Intent course=new Intent(LevelActivity.this, CourseActivity.class);
-        startActivity(course);
-        //switch(responseIndex){
-          //  case 2:
-        //}
+
+        switch(responseIndex){
+           case 1:{
+                Intent course=new Intent(LevelActivity.this, CourseLevel1Activity.class);
+                startActivity(course);
+                break;}
+            case 2:
+            {
+                Intent course = new Intent(LevelActivity.this, CourseLevel2Activity.class);
+                startActivity(course);
+                break;
+            }
+        }
 
     }
 }

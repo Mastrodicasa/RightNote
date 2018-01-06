@@ -24,10 +24,27 @@ public class Tab2Fragment extends Fragment {
         mTextView=(TextView) view.findViewById(R.id.textTab2);
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            int myInt = bundle.getInt("frag", 1);
-            if (myInt==1)
+            int myInt = bundle.getInt("frag");
+            switch(myInt)
             {
-                this.setText("It exits 12 notes from a Do to another Do (this difference is called an octave).  So an octave is divided in 12 equal parts called semi tones.");
+                case 11:
+                    this.setText("On a piano the 7 so called natural notes are the white ones (Do/Re/Mi/FA/Sol/La/Si) and the 5 altered notes ( C#/D#/F#/G#/A#) are the black ones.");
+                    break;
+                case 12:
+                    this.setText("Relatively to the root, different notes give different feelings:\n" +
+                            "Minor third: Sad\n" +
+                            "Major third: Happy\n" +
+                            "Fifth: Gives body");
+                    break;
+                case 21:
+                    this.setText("Notice that:\n"+
+                            "1) The notes in roman numeral above denote the function of that note in that scale. We have already seen the fundamental, the third, the fifth.\n "
+                            +"2) The Do major chord 's notes are present in the Do major scale\n"
+                    +"=>To form all the chords of a scale (process called harmonizing), one adds thirds. Major or minor? The scale imposes it.");
+                    break;
+                default:
+                    this.setText("ERROR of myInt");
+                    break;
             }
         }
         return view;

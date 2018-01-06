@@ -1,5 +1,6 @@
 package com.example.user.myapplication;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -23,6 +24,7 @@ import android.widget.TextView;
 public class TheoryActivity extends AppCompatActivity {
 
     private static final String TAG="TheoryActivity";
+    public static final String BUNDLE_EXTRA_READ = "BUNDLE_EXTRA_READ";
 
     private SectionsPageAdapter mSectionsPageAdapter;
     private ViewPager mViewPager;
@@ -37,42 +39,64 @@ public class TheoryActivity extends AppCompatActivity {
 
         mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
 
+
+
+        //On récupère de Course activity quel bouton a été appuyé:
+        // car différents boutons envoient vers des cours théoriques différents
+        Bundle extras=getIntent().getExtras();
+        int nbTh;
+        if (extras!=null)
+        {
+            //Ce nombre correspond au quantième groupe
+            nbTh=extras.getInt("BUNDLE_THEORY");
+        }
+        else
+        {
+            //N'importe quoi pour dire que y a une erreur
+            nbTh=1000;
+        }
+
         //Set up the ViewPager with the sections adapter
         mViewPager= (ViewPager) findViewById(R.id.container);
-        setupViewPager(mViewPager);
+        setupViewPager(mViewPager, nbTh);
 
         TabLayout tabLayout= (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent();
+                intent.putExtra(BUNDLE_EXTRA_READ, true);
+                setResult(RESULT_OK, intent);
+                finish();
             }
         });
 
     }
 
-    private void setupViewPager (ViewPager viewPager)
+    private void setupViewPager (ViewPager viewPager, int nbTh)
     {
         SectionsPageAdapter adapter= new SectionsPageAdapter(getSupportFragmentManager());
-        Tab1Fragment tab1Fragment=new Tab1Fragment();
-        //Bundle bundle = new Bundle();
-        //bundle.putInt("frag", 1);
-        //tab1Fragment.setArguments(bundle);
-        //tab1Fragment.setText("j ai tout sbraaaa");
-        adapter.addFragment(tab1Fragment, "PAGE 1");
-        Tab2Fragment tab2Fragment=new Tab2Fragment();
+
         Bundle bundle = new Bundle();
-        bundle.putInt("frag", 1);
+        bundle.putInt("frag", nbTh);
+
+        Tab1Fragment tab1Fragment=new Tab1Fragment();
+        tab1Fragment.setArguments(bundle);
+        adapter.addFragment(tab1Fragment, "PAGE 1");
+
+        Tab2Fragment tab2Fragment=new Tab2Fragment();
         tab2Fragment.setArguments(bundle);
-        //tab2Fragment.setText("nichen ");
         adapter.addFragment(tab2Fragment, "PAGE 2");
+
+
         Tab3Fragment tab3Fragment=new Tab3Fragment();
-        //tab3Fragment.setText("raaaaaaaa");
+        tab3Fragment.setArguments(bundle);
         adapter.addFragment(tab3Fragment, "PAGE 3");
+
         viewPager.setAdapter(adapter);
 
     }
