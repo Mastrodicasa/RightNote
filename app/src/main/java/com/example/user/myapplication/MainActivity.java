@@ -59,6 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent levelActivity = new Intent(MainActivity.this, LevelActivity.class);
         startActivity(levelActivity);
 
-
+        //Ce commentaire n'était pas là avant
     }
 }
