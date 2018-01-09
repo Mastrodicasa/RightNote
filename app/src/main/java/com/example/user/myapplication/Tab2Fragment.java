@@ -42,6 +42,8 @@ public class Tab2Fragment extends Fragment {
                             +"2) The Do major chord 's notes are present in the Do major scale\n"
                     +"=>To form all the chords of a scale (process called harmonizing), one adds thirds. Major or minor? The scale imposes it.");
                     break;
+                case 22:
+                    this.setText("The V I cadence gives this impression of finished sentence");
                 default:
                     this.setText("ERROR of myInt");
                     break;
