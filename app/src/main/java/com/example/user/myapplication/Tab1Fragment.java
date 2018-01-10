@@ -43,9 +43,15 @@ public class Tab1Fragment  extends Fragment{
                 break;
 
                 case 22:
-                    this.setText("A cadence is a progression of chords in the same scale, some let's hear the most common ones:\n"
+                    this.setText("Now that we have all the chords that we can play in the Do major scale, we can join some of them and the result is a cadence.\n"+
+                            "A cadence is a progression of chords in the same scale, some of them are very common, and the most common is the V I cadence:\n"
                     +"");
+                    break;
 
+                case 31:
+                    this.setText("An another very important and common note is the minor seventh with a major chord which gives a tense feeling.\n"
+                    +"As with the basic Sol chord, if we want a Sol7, we just need to add the third that is imposed by the scale, so we harmonize the Do major scale with 4 notes instead of 3 now. ");
+                    break;
                 default:
                     this.setText("ERROR of myInt");
                     break;

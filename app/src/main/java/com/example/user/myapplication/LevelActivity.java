@@ -54,6 +54,12 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(course);
                 break;
             }
+            case 3:
+            {
+                Intent course = new Intent(LevelActivity.this, CourseLevel3Activity.class);
+                startActivity(course);
+                break;
+            }
         }
 
     }

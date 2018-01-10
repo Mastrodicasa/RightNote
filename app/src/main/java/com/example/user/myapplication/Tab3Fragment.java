@@ -37,6 +37,15 @@ public class Tab3Fragment extends Fragment {
                     +"V Sol? Sol+Si+Re (major)\n"+
                     "All the chords are either minor or major, only the VII chord is different. But because it is an exeption and it is rarely used, let's skip it at least for the moment.");
                     break;
+                case 22:
+                    this.setText("This cadence will be played two times when you click on the button Next.\n" +
+                            "The first cadence is played only to prepare you, then at the second one you will have a point if you play the requested note when the chord starts to be played.\n"
+                            +"Except those moments, you can play any note you want.");
+                    break;
+                case 31:
+                    this.setText("Because the V I cadence gives this end of sentence impression, we can reinforce that feeling by making the V more tense by transforming into a V7 chord.\n"
+                        +"For the next exercice, you will emphazise the tense feeling and the one after that you will discover the soft IMajor7.");
+                    break;
 
                 default:
                     this.setText("ERROR of myInt");

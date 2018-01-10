@@ -46,7 +46,7 @@ public class QuestionBank {
         //Le premier nombre c'est le level, le deuxième nombre c'est le numero de l'exercice dans le level
         switch(whichEx){
             case 11:{
-                for(i=1;i<=1; i++) {
+                for(i=1;i<=5; i++) {
                     question = generateQuestionEx11();
                     questionList.add(question);
                 }
@@ -66,6 +66,15 @@ public class QuestionBank {
                 }
                 return  questionList;
 
+            }
+
+            case 21:
+            {
+                for(i=1;i<=5; i++) {
+                    question = generateQuestionEx21();
+                    questionList.add(question);
+                }
+                return  questionList;
             }
 
             default:{
@@ -173,6 +182,38 @@ public class QuestionBank {
             default:
                 question= new Question("ERROR PLAY DO", 1);
                 break;
+        }
+        return question;
+    }
+
+    public Question generateQuestionEx21() {
+        Random rand = new Random();
+        Question question;
+        int i = 1 + rand.nextInt(6);
+        switch (i) {
+            case 1:
+                question = new Question("Play the major third of Do", 5);
+                break;
+            case 2:
+                question = new Question("Play the minor third of Re", 6);
+                break;
+            case 3:
+                question = new Question("Play the minor third of Mi", 8);
+                break;
+            case 4:
+                question = new Question("Play the major third of Fa", 10);
+                break;
+            case 5:
+                question = new Question("Play the major third of Sol", 12);
+                break;
+            case 6:
+                question = new Question("Play the minor third of La", 1);
+                break;
+
+            default:
+                question = new Question("Play the major third of Do", 5);
+                break;
+
         }
         return question;
     }

@@ -43,7 +43,13 @@ public class Tab2Fragment extends Fragment {
                     +"=>To form all the chords of a scale (process called harmonizing), one adds thirds. Major or minor? The scale imposes it.");
                     break;
                 case 22:
-                    this.setText("The V I cadence gives this impression of finished sentence");
+                    this.setText("The V I cadence gives this impression of finished sentence, a back to normal situation.\n"
+                    +"We will try to play the notes of these chords while they are played in the background. At each question, it will be specified which note should be played.");
+                    break;
+                case 31:
+                    this.setText("Instead of harmonizing the whole scale, one can directly learn that V chord is the only major chord that adds a minor seventh in the scale, giving this tense feeling.\n"
+                    +"Other combinations give other feelings: If we add a major seventh on a major chord (what happens for the I chord), the resulting chord is very warm. DoMaj7 is an exemple.");
+                    break;
                 default:
                     this.setText("ERROR of myInt");
                     break;

@@ -5,11 +5,11 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.user.myapplication.CourseLevel2Activity"
+        tools:context="com.example.user.myapplication.CourseLevel3Activity"
         android:orientation="vertical">
 
     <Button
-            android:text="Scale"
+            android:text="Seventh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" tools:layout_editor_absoluteY="30dp"
             tools:layout_editor_absoluteX="16dp" android:id="@+id/button2"/>
@@ -19,12 +19,12 @@
             android:layout_height="wrap_content" tools:layout_editor_absoluteY="108dp"
             tools:layout_editor_absoluteX="16dp" android:id="@+id/button3"/>
     <Button
-            android:text="Cadence"
+            android:text="Ex2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" tools:layout_editor_absoluteY="200dp"
             tools:layout_editor_absoluteX="16dp" android:id="@+id/button4"/>
     <Button
-            android:text="Ex2"
+            android:text="Backtrack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" tools:layout_editor_absoluteY="290dp"
             tools:layout_editor_absoluteX="16dp" android:id="@+id/button5"/>
