@@ -73,6 +73,12 @@ public class QuestionCadenceBank {
                     questionCadenceList.add(questionCadence);
                 }
                 return  questionCadenceList;}
+            case 33:{
+                for(i=1;i<=3; i++) {
+                    questionCadence = generateQuestionCadenceEx33();
+                    questionCadenceList.add(questionCadence);
+                }
+                return  questionCadenceList;}
 
             default:{
                 questionCadence=generateQuestionCadenceEx22();
@@ -86,7 +92,7 @@ public class QuestionCadenceBank {
 
     public QuestionCadence generateQuestionCadenceEx22()
     {
-        String question="Play the fondamental note of each chord";
+        String question="Play the root note of each chord";
         List<Integer> answers= Arrays.asList(8,1);
         //L veut dire long
         List<Long> timeAnswers= Arrays.asList(400L, 1400L);
@@ -136,6 +142,18 @@ public class QuestionCadenceBank {
         return questionCadence;
     }
 
+    public QuestionCadence generateQuestionCadenceEx33()
+    {
+        String question="Play: 7th/I  3rd/IIIm  5th/VIm  7th/V";
+        List<Integer> answers= Arrays.asList(12,8, 5,6);
+        //L veut dire long
+        List<Long> timeAnswers= Arrays.asList(3000L, 5790L, 8550L, 11280L);
+        List<Integer> cadence= Arrays.asList(1,3,6,5);
+
+        QuestionCadence questionCadence= new QuestionCadence(question, answers, timeAnswers, cadence);
+
+        return questionCadence;
+    }
 
 
     public String nameOfTheNote(int note)

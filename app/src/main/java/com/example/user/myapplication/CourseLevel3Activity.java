@@ -13,6 +13,7 @@ public class CourseLevel3Activity extends AppCompatActivity implements View.OnCl
     private Button bChord;
     private Button bEx2;
     private Button bEx3;
+    private Button bRecording;
 
     private static final int SCORE_TH31_REQUEST_CODE= 54;
     private static final int SCORE_TH32_REQUEST_CODE= 55;
@@ -29,6 +30,7 @@ public class CourseLevel3Activity extends AppCompatActivity implements View.OnCl
         bChord=(Button) findViewById(R.id.button4);
         bEx2=(Button) findViewById(R.id.button5);
         bEx3=(Button) findViewById(R.id.button6);
+        bRecording=(Button) findViewById(R.id.button7);
 
 
         bKeyboard.setOnClickListener(this);
@@ -36,12 +38,14 @@ public class CourseLevel3Activity extends AppCompatActivity implements View.OnCl
         bChord.setOnClickListener(this);
         bEx2.setOnClickListener(this);
         bEx3.setOnClickListener(this);
+        bRecording.setOnClickListener(this);
 
         bKeyboard.setTag(1);
         bEx1.setTag(2);
         bChord.setTag(3);
         bEx2.setTag(4);
         bEx3.setTag(5);
+        bRecording.setTag(6);
 
     }
 
@@ -75,6 +79,10 @@ public class CourseLevel3Activity extends AppCompatActivity implements View.OnCl
                 piano3.putExtra("BUNDLE_EXERCICE", 33);
                 startActivityForResult(piano3,SCORE_EX33_REQUEST_CODE);
                 break;
+            case 6:
+                Intent recording=new Intent(CourseLevel3Activity.this, PianoRecordActivity.class);
+                startActivity(recording);
+            break;
 
         }
 

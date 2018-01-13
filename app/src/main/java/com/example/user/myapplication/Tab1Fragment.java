@@ -33,24 +33,27 @@ public class Tab1Fragment  extends Fragment{
                     this.setText("It exits 12 notes from a Do to another Do (this difference is called an octave).  So an octave is divided in 12 equal parts called semi tones.");
                     break;
                 case 12:
-                    this.setText("The simplest chord is composed of 3 notes: the root, the minor(+1.5) or major third (+2) and the fifth (+3.5). \n" +
+                    this.setText("The simplest chord is composed of 3 notes: the root, the minor(+1.5) or major third (+2) and the fifth (+3.5 from the root). When written with a point in between, we talked about tones, so as a reminder +1.5 tones = +3 semi-tones. From now on, everything will be written in tones. \n" +
                             "Do major= Do+Mi+Sol.");
                         break;
                 case 21:
                 this.setText("A lot of different scales exist, for the moment let's focus on the \"happy\" major scale which is composed of 7 notes.\n"+
-                        "MANQUE LE DESSIN DE LA GAMME\n"+"To have the same scale for another note, we keep the same spacing.\n"
-                +"MANQUE LE DESSIN DE LA GAMME");
+                        "Do (1) Re (1) Mi (0.5) Fa (1) Sol (1) La (1) Si (0.5) Do \n"+"To have the same scale for another note, we keep the same spacing.\n"
+                +"Sol (1) La (1) Si (0.5) Do (1) Re (1) Mi (1) Fa# (0.5) Sol");
                 break;
 
                 case 22:
                     this.setText("Now that we have all the chords that we can play in the Do major scale, we can join some of them and the result is a cadence.\n"+
-                            "A cadence is a progression of chords in the same scale, some of them are very common, and the most common is the V I cadence:\n"
-                    +"");
+                            "A cadence is a progression of chords in the same scale, some of them are very common, and the most common is the V I cadence." );
                     break;
 
                 case 31:
                     this.setText("An another very important and common note is the minor seventh with a major chord which gives a tense feeling.\n"
                     +"As with the basic Sol chord, if we want a Sol7, we just need to add the third that is imposed by the scale, so we harmonize the Do major scale with 4 notes instead of 3 now. ");
+                    break;
+
+                case 32:
+                    this.setText("Now that you the rudiments of improvising, we can try our first real backtrack! A backtrack is cycle of chords in a certain scale made on purpose without vocal or melody above so that someone can improvise on it.");
                     break;
                 default:
                     this.setText("ERROR of myInt");

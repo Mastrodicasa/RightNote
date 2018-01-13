@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.user.myapplication">
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <!--<permission android:name="android.permission.RECORD_AUDIO" />-->
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -22,12 +26,23 @@
                 android:name=".PianoActivity"
                 android:screenOrientation="landscape">
         </activity>
-        <activity android:name=".CourseLevel1Activity"></activity>
-        <activity android:name=".CourseLevel2Activity"></activity>
+        <activity android:name=".CourseLevel1Activity"/>
+        <activity android:name=".CourseLevel2Activity"/>
         <activity
                 android:name=".TheoryActivity"
                 android:label="@string/title_activity_main2"
                 android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".PianoCadenceActivity"
+                android:screenOrientation="landscape">
+        </activity>
+        <activity android:name=".CourseLevel3Activity">
+        </activity>
+        <activity android:name=".PianoRecordActivity"
+                  android:screenOrientation="landscape"
+                  android:permission="android.permission.RECORD_AUDIO"
+        >
         </activity>
     </application>
 

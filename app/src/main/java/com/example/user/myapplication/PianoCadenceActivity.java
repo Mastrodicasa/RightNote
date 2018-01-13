@@ -46,6 +46,7 @@ public class PianoCadenceActivity extends AppCompatActivity implements View.OnCl
     private MediaPlayer mp;
     private boolean mLaunchedOnce;
     private int whichQuestion;
+    private int mNbrExercice;
 
 
     @Override
@@ -106,6 +107,7 @@ public class PianoCadenceActivity extends AppCompatActivity implements View.OnCl
         {
             //Ce nombre correspond au quantième groupe
             int nbEx=extras.getInt(BUNDLE_EXERCICE);
+            mNbrExercice=nbEx;
             mScore=0;
             //On crée la liste de questions propre à l'exercice demandé
             mQuestionCadenceBank=new QuestionCadenceBank(nbEx);
@@ -149,7 +151,7 @@ public class PianoCadenceActivity extends AppCompatActivity implements View.OnCl
                 mCurrentQuestionCadence = mQuestionCadenceBank.getQuestionCadence(whichQuestion);
                 //mTextView.setText(mCurrentQuestionCadence.getQuestion());
 
-                play();
+                playCadence();
 
             }
         }
@@ -181,18 +183,28 @@ public class PianoCadenceActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-    private void play()
+    private void playCadence()
     {
-        mp= MediaPlayer.create(this, R.raw.v);
-        mp.start();
-        while(mp.isPlaying());
-        mp= MediaPlayer.create(this, R.raw.i);
-        mp.start();
-        while(mp.isPlaying());
-        mWhenStarted=System.currentTimeMillis();
-        Log.i("Debug", "First Chord= "+Long.toString(System.currentTimeMillis()));
-        mp=MediaPlayer.create(this, R.raw.cadence_v_i);
-        mp.start();
+        if(mNbrExercice<=32) {
+            mp= MediaPlayer.create(this, R.raw.v);
+            mp.start();
+            while(mp.isPlaying());
+            mp= MediaPlayer.create(this, R.raw.i);
+            mp.start();
+            while(mp.isPlaying());
+            mWhenStarted=System.currentTimeMillis();
+            Log.i("Debug", "First Chord= " + Long.toString(System.currentTimeMillis()));
+            mp = MediaPlayer.create(this, R.raw.cadence_v_i);
+            mp.start();
+        }
+        else
+        {
+            mp= MediaPlayer.create(this, R.raw.backtrack_v);
+            mp.start();
+            mWhenStarted=System.currentTimeMillis();
+            Log.i("Debug", "First Chord= " + Long.toString(System.currentTimeMillis()));
+
+        }
     }
 
 

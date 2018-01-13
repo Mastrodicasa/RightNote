@@ -28,7 +28,7 @@ public class Tab2Fragment extends Fragment {
             switch(myInt)
             {
                 case 11:
-                    this.setText("On a piano the 7 so called natural notes are the white ones (Do/Re/Mi/FA/Sol/La/Si) and the 5 altered notes ( C#/D#/F#/G#/A#) are the black ones.");
+                    this.setText("On a piano the 7 so called natural notes are the white ones (Do/Re/Mi/FA/Sol/La/Si) and the 5 altered notes (C#/D#/F#/G#/A#) are the black ones.");
                     break;
                 case 12:
                     this.setText("Relatively to the root, different notes give different feelings:\n" +
@@ -50,6 +50,12 @@ public class Tab2Fragment extends Fragment {
                     this.setText("Instead of harmonizing the whole scale, one can directly learn that V chord is the only major chord that adds a minor seventh in the scale, giving this tense feeling.\n"
                     +"Other combinations give other feelings: If we add a major seventh on a major chord (what happens for the I chord), the resulting chord is very warm. DoMaj7 is an exemple.");
                     break;
+
+                case 32:
+                    this.setText("The backtrack will play: I IIIm VIm V, so the chords present in a major scale. So between 2 cycles you have the V I cadence we already know. To prepare the player, V I IIIm VIm V will be played but only the last 4 chords are the ones that give points.\n"
+                    +"So in the Do major scale, it is Do Mim Lam Sol and the exercice will be to play specific notes of some chord.");
+                    break;
+
                 default:
                     this.setText("ERROR of myInt");
                     break;

@@ -20,9 +20,11 @@ public class QuestionCadence {
         this.setTimeAnswers(TimeAnswers);
         this.setCadence(Cadence);
 
+        int i;
         mAlreadyPlayed=new ArrayList<>();
-        mAlreadyPlayed.add(false);
-        mAlreadyPlayed.add(false);
+        for(i=1; i<= mAnswers.size(); i++) {
+            mAlreadyPlayed.add(false);
+        }
 
     }
 
