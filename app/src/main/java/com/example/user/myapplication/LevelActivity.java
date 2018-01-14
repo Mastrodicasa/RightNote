@@ -3,12 +3,18 @@ package com.example.user.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-public class LevelActivity extends AppCompatActivity implements View.OnClickListener {
+import java.util.ArrayList;
+import java.util.List;
 
-    private Button bKeyboard;
+public class LevelActivity extends AppCompatActivity  {
+
+   /* private Button bKeyboard;
     private Button bEx1;
     private Button bChord;
     private Button bEx2;
@@ -39,6 +45,7 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
         bEx3.setTag(5);
     }
 
+
     @Override
     public void onClick(View v) {
         int responseIndex = (int) v.getTag();
@@ -62,5 +69,65 @@ public class LevelActivity extends AppCompatActivity implements View.OnClickList
             }
         }
 
+    }
+    */
+
+    RecyclerView recyclerView;
+    ProductAdapter adapter;
+
+    List<Product> productList;
+    //DECLARER TOOLBAR
+    private Toolbar mToolbar;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_level);
+
+        //DEFINIR TOOLBAR
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Levels");
+        getSupportActionBar().setIcon(getDrawable(R.drawable.level));
+
+        productList = new ArrayList<>();
+
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        productList.add(
+                new Product(
+                        1,
+                        "Novice",
+                        R.drawable.maison));
+
+        productList.add(
+                new Product(
+                        1,
+                        "Easy",
+                        R.drawable.petit_bar));
+
+        productList.add(
+                new Product(
+                        1,
+                        "Medium",
+                        R.drawable.grand_bar));
+        productList.add(
+                new Product(
+                        1,
+                        "Hard",
+                        R.drawable.orchestre));
+        productList.add(
+                new Product(
+                        1,
+                        "Expert",
+                        R.drawable.stadedefoot));
+
+
+        adapter = new ProductAdapter(this, productList);
+        recyclerView.setAdapter(adapter);
     }
 }

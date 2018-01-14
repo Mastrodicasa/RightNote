@@ -3,6 +3,7 @@ package com.example.user.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
@@ -20,10 +21,19 @@ public class CourseLevel3Activity extends AppCompatActivity implements View.OnCl
     private static final int SCORE_EX31_REQUEST_CODE = 56;
     private static final int SCORE_EX32_REQUEST_CODE = 57;
     private static final int SCORE_EX33_REQUEST_CODE = 58;
+
+    private Toolbar mToolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_level_3);
+
+        //DEFINIR TOOLBAR
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setTitle("Level 3");
+        getSupportActionBar().setIcon(getDrawable(R.drawable.course));
 
         bKeyboard=(Button) findViewById(R.id.button2);
         bEx1=(Button) findViewById(R.id.button3);

@@ -13,13 +13,16 @@
             android:theme="@style/AppTheme">
         <!--<permission android:name="android.permission.RECORD_AUDIO" />-->
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity">
+        </activity>
+
         <activity android:name=".LevelActivity">
         </activity>
         <activity
@@ -43,6 +46,10 @@
                   android:screenOrientation="landscape"
                   android:permission="android.permission.RECORD_AUDIO"
         >
+        </activity>
+        <activity android:name=".CreditActivity">
+        </activity>
+        <activity android:name=".InfoActivity">
         </activity>
     </application>
 
