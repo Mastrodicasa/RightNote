@@ -47,8 +47,8 @@ public class InfoActivity extends AppCompatActivity {
                                 "simulate at best the reality. This keyboard represents " +
                                 "the fourth Octave of a real piano. In other words, it is the" +
                                 "center part where the notes are classic. " +
-                                "The main goal of RightNote is to teach to people how to " +
-                                "chose the good notes. For this, different types of exercises  " +
+                                "The main goal of RightNote is to teach to people how to  " +
+                                "chose the good notes. For this, different types of exercises  \t" +
                                 " are available trough five levels of difficulty. "));
         productList.add(
 
@@ -56,9 +56,9 @@ public class InfoActivity extends AppCompatActivity {
                 1,
                 "Why would you use this application?",
                         R.mipmap.update,
-                "You don't need to be an expert in music because RightNote is a progressive" +
-                        "learn application. Moreover, theoretical aspects are recalled for each level." +
-                        " This application goes further than simply recognise the music notes. Indeed," +
+                "You don't need to be an expert in music because RightNote is a progressive \t" +
+                        "learn application. Moreover, theoretical aspects are recalled for each level.\t" +
+                        " This application goes further than simply recognise the music notes. Indeed, \t" +
                         "you will have to imagine the following of the song. "));
         productList.add(
 
@@ -73,7 +73,16 @@ public class InfoActivity extends AppCompatActivity {
                 1,
                 "Which version is it?",
                 R.mipmap.update,
-                "This is the first version of RigthNote v1.1."));
+                "This is the first version of RigthNote v1.1"));
+
+        productList.add(
+                new ProductInfo(
+                        1,
+                        "Little tip",
+                        R.mipmap.update,
+                        "If you want to play freely with the piano without having any score, any question or whatever \t" +
+                                ", you should "));
+
 
 
 

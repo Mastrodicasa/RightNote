@@ -15,7 +15,7 @@ tools:context="com.example.user.myapplication.PianoActivity">
 
 <TextView
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="32dp"
         android:layout_marginTop="30dp"
         android:text="La question que tout le monde se pose"
         android:textSize="25dp"
@@ -34,7 +34,7 @@ tools:context="com.example.user.myapplication.PianoActivity">
 
     <ImageButton
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="33dp"
             android:layout_width="80dp"
             android:layout_height="170dp"
             android:background="@drawable/buttonfileround"
@@ -46,7 +46,7 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="36dp"
-            android:layout_marginTop="155dp"
+            android:layout_marginTop="163dp"
             android:text="Do"
             android:textStyle="bold"
             android:textSize="30sp"

@@ -29,6 +29,8 @@ public class TheoryActivity extends AppCompatActivity {
     private SectionsPageAdapter mSectionsPageAdapter;
     private ViewPager mViewPager;
 
+    private Toolbar mToolbar;
+
     //private TextView mTextView;
 
     @Override
@@ -39,6 +41,8 @@ public class TheoryActivity extends AppCompatActivity {
 
         mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
 
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
 
         //On récupère de Course activity quel bouton a été appuyé:
@@ -49,6 +53,25 @@ public class TheoryActivity extends AppCompatActivity {
         {
             //Ce nombre correspond au quantième groupe
             nbTh=extras.getInt("BUNDLE_THEORY");
+            if (nbTh == 11){
+                getSupportActionBar().setTitle("Keyboard");
+                getSupportActionBar().setIcon(getDrawable(R.drawable.theory));
+            }else if(nbTh == 12){
+                getSupportActionBar().setTitle("Chord");
+                getSupportActionBar().setIcon(getDrawable(R.drawable.theory));
+            }else if(nbTh == 21){
+                getSupportActionBar().setTitle("Scale");
+                getSupportActionBar().setIcon(getDrawable(R.drawable.theory));
+            }else if(nbTh == 22){
+                getSupportActionBar().setTitle("Cadence");
+                getSupportActionBar().setIcon(getDrawable(R.drawable.theory));
+            }else if(nbTh == 31){
+                getSupportActionBar().setTitle("Seventh");
+                getSupportActionBar().setIcon(getDrawable(R.drawable.theory));
+            }else if(nbTh == 32){
+                getSupportActionBar().setTitle("Chord");
+                getSupportActionBar().setIcon(getDrawable(R.drawable.theory));
+            }
         }
         else
         {

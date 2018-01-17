@@ -2,6 +2,7 @@ package com.example.user.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,6 +65,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             itemView.setOnClickListener(this);
             imageView = itemView.findViewById(R.id.imageView);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
+            textViewTitle.setTypeface(null, Typeface.BOLD);
             //textViewDesc = itemView.findViewById(R.id.textViewShortDesc);
            // textViewRating = itemView.findViewById(R.id.textViewRating);
           //  textViewPrice = itemView.findViewById(R.id.textViewPrice);

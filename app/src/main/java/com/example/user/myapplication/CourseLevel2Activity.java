@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 
@@ -94,23 +96,28 @@ public class CourseLevel2Activity extends AppCompatActivity implements View.OnCl
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (SCORE_EX21_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            bEx1.setText(Integer.toString(score));
+            Spanned text = Html.fromHtml("Exercise 1 <small> Score \t" +   Integer.toString(score) + "%");
+            bEx1.setText(text);
         }
         else if (SCORE_EX22_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            bEx2.setText(Integer.toString(score));
+            Spanned text = Html.fromHtml("Exercise 2 <small> Score \t" +   Integer.toString(score) + "%");
+            bEx2.setText(text);
         }
         else if (SCORE_EX23_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            bEx3.setText(Integer.toString(score));
+            Spanned text = Html.fromHtml("Exercise 3 <small> Score \t" +   Integer.toString(score) + "%");
+            bEx3.setText(text);
         }
         else if (SCORE_TH21_REQUEST_CODE== requestCode && RESULT_OK == resultCode) {
             boolean read = data.getBooleanExtra(TheoryActivity.BUNDLE_EXTRA_READ, false);
-            bKeyboard.setText(Boolean.toString(read));
+            Spanned text = Html.fromHtml("Scale <small> Read \t" );
+            bKeyboard.setText(text);
         }
         else if (SCORE_TH22_REQUEST_CODE== requestCode && RESULT_OK == resultCode) {
             boolean read = data.getBooleanExtra(TheoryActivity.BUNDLE_EXTRA_READ, false);
-            bChord.setText(Boolean.toString(read));
+            Spanned text = Html.fromHtml("Cadence <small> Read \t" );
+            bChord.setText(text);
         }
     }
 }

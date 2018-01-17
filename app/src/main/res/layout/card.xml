@@ -33,7 +33,7 @@
                 android:layout_marginTop="120dp"
                 android:layout_marginBottom="0dp"
                 android:layout_centerHorizontal="true"
-                android:textSize="40sp"
+                android:textSize="46sp"
                 android:text="Niveau du Level"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textColor="#fff" />

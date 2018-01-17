@@ -101,9 +101,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(responseIndex == 1) {
             Intent levelActivity = new Intent(MainActivity.this, LevelActivity.class);
             startActivity(levelActivity);
-        }else if (responseIndex == 2){
+        }else if (responseIndex == 2) {
             Intent infoActivity = new Intent(MainActivity.this, InfoActivity.class);
             startActivity(infoActivity);
+        }else if (responseIndex == 3){
+            Intent pianoActivity = new Intent(MainActivity.this, PianoRecordActivity.class);
+            startActivity(pianoActivity);
         }else if (responseIndex == 4){
             Intent creditActivity = new Intent(MainActivity.this, CreditActivity.class);
             startActivity(creditActivity);

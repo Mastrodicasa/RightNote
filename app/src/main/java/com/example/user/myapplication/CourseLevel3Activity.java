@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,7 +16,7 @@ public class CourseLevel3Activity extends AppCompatActivity implements View.OnCl
     private Button bChord;
     private Button bEx2;
     private Button bEx3;
-    private Button bRecording;
+   // private Button bRecording;
 
     private static final int SCORE_TH31_REQUEST_CODE= 54;
     private static final int SCORE_TH32_REQUEST_CODE= 55;
@@ -40,7 +42,7 @@ public class CourseLevel3Activity extends AppCompatActivity implements View.OnCl
         bChord=(Button) findViewById(R.id.button4);
         bEx2=(Button) findViewById(R.id.button5);
         bEx3=(Button) findViewById(R.id.button6);
-        bRecording=(Button) findViewById(R.id.button7);
+     //   bRecording=(Button) findViewById(R.id.button7);
 
 
         bKeyboard.setOnClickListener(this);
@@ -48,14 +50,14 @@ public class CourseLevel3Activity extends AppCompatActivity implements View.OnCl
         bChord.setOnClickListener(this);
         bEx2.setOnClickListener(this);
         bEx3.setOnClickListener(this);
-        bRecording.setOnClickListener(this);
+       // bRecording.setOnClickListener(this);
 
         bKeyboard.setTag(1);
         bEx1.setTag(2);
         bChord.setTag(3);
         bEx2.setTag(4);
         bEx3.setTag(5);
-        bRecording.setTag(6);
+      //  bRecording.setTag(6);
 
     }
 
@@ -89,11 +91,11 @@ public class CourseLevel3Activity extends AppCompatActivity implements View.OnCl
                 piano3.putExtra("BUNDLE_EXERCICE", 33);
                 startActivityForResult(piano3,SCORE_EX33_REQUEST_CODE);
                 break;
-            case 6:
+           /* case 6:
                 Intent recording=new Intent(CourseLevel3Activity.this, PianoRecordActivity.class);
                 startActivity(recording);
             break;
-
+          */
         }
 
     }
@@ -102,23 +104,28 @@ public class CourseLevel3Activity extends AppCompatActivity implements View.OnCl
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (SCORE_EX31_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            bEx1.setText(Integer.toString(score));
+            Spanned text = Html.fromHtml("Exercise 1 <small> Score \t" +   Integer.toString(score) + "%");
+            bEx1.setText(text);
         }
         else if (SCORE_EX32_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            bEx2.setText(Integer.toString(score));
+            Spanned text = Html.fromHtml("Exercise 2 <small> Score \t" +   Integer.toString(score) + "%");
+            bEx2.setText(text);
         }
         else if (SCORE_EX33_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            bEx3.setText(Integer.toString(score));
+            Spanned text = Html.fromHtml("Exercise 3 <small> Score \t" +   Integer.toString(score) + "%");
+            bEx3.setText(text);
         }
         else if (SCORE_TH31_REQUEST_CODE== requestCode && RESULT_OK == resultCode) {
             boolean read = data.getBooleanExtra(TheoryActivity.BUNDLE_EXTRA_READ, false);
-            bKeyboard.setText(Boolean.toString(read));
+            Spanned text = Html.fromHtml("Seventh <small> Read \t" );
+            bKeyboard.setText(text);
         }
         else if (SCORE_TH32_REQUEST_CODE== requestCode && RESULT_OK == resultCode) {
             boolean read = data.getBooleanExtra(TheoryActivity.BUNDLE_EXTRA_READ, false);
-            bChord.setText(Boolean.toString(read));
+            Spanned text = Html.fromHtml("Chord <small> Read \t" );
+            bChord.setText(text);
         }
     }
 }

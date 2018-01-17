@@ -104,8 +104,8 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
         //DEFINIR TOOLBAR
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Exercises");
-        getSupportActionBar().setIcon(getDrawable(R.drawable.exercises));
+        getSupportActionBar().setTitle("Recording");
+        getSupportActionBar().setIcon(getDrawable(R.drawable.recordingbar));
 
         //DECLARER TOUTES LES NOTES TEXT :
 

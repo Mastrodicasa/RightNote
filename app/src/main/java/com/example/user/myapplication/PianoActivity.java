@@ -82,7 +82,7 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
         //DEFINIR TOOLBAR
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Exercises");
+        getSupportActionBar().setTitle("Exercise");
         getSupportActionBar().setIcon(getDrawable(R.drawable.exercises));
 
         //DECLARER TOUTES LES NOTES TEXT :

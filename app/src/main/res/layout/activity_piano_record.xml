@@ -15,8 +15,8 @@
 
     <TextView
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="25dp"
             android:text="Start Recording"
             android:textSize="25dp"
             android:layout_gravity="center"

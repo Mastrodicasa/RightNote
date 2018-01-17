@@ -91,7 +91,7 @@ public class PianoCadenceActivity extends AppCompatActivity implements View.OnCl
         //DEFINIR TOOLBAR
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Exercises");
+        getSupportActionBar().setTitle("Exercise");
         getSupportActionBar().setIcon(getDrawable(R.drawable.exercises));
 
         //DECLARER TOUTES LES NOTES TEXT :
