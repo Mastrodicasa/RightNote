@@ -81,7 +81,7 @@ public class InfoActivity extends AppCompatActivity {
                         "Little tip",
                         R.mipmap.update,
                         "If you want to play freely with the piano without having any score, any question or whatever \t" +
-                                ", you should ffaire caca "));
+                                ", you should ffaire cacaiii "));
 
 
 
