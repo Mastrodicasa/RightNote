@@ -20,8 +20,8 @@
             <ImageView
                 android:layout_marginTop="8dp"
                 android:id="@+id/imageViewInfo"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:padding="0dp" />
 
 
@@ -30,11 +30,11 @@
                 android:layout_toRightOf="@+id/imageViewInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_alignTop="@+id/imageViewInfo"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="9dp"
                 android:layout_centerHorizontal="true"
-                android:textSize="25sp"
-                android:text="Information   "
+                android:textSize="23sp"
+                android:text="Who are the developpers gg?   "
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textColor="#000" />
 
@@ -45,7 +45,7 @@
                 android:layout_below="@id/imageViewInfo"
                 android:layout_marginLeft="5dp"
                 android:textSize="15sp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="10dp"
                 android:text="Informations sur l'application"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
             <!--

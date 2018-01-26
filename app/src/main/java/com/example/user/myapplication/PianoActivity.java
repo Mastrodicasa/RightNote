@@ -12,11 +12,14 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static java.lang.Math.multiplyExact;
 
 public class PianoActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -71,6 +74,7 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
     private QuestionBank mQuestionBank;
     private Question mCurrentQuestion;
     private int mScore;
+    private int ratioGame;
     private int mNumberOfQuestions;
 
 
@@ -243,8 +247,9 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
 
     private void endGame() {
 
-        double ratioGame= (double) mScore/mQuestionBank.getSize();
-        if(ratioGame>=0.8) {
+        ratioGame= multiplyExact(mScore,100)/mQuestionBank.getSize();
+
+        if(ratioGame>=80) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Well done!")
                     .setMessage("Your score is " + mScore + "/" + mQuestionBank.getSize())
@@ -253,7 +258,7 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
                         public void onClick(DialogInterface dialog, int which) {
                             // Fin de l'ex et envoi du score
                             Intent intent = new Intent();
-                            intent.putExtra(BUNDLE_EXTRA_SCORE, mScore);
+                            intent.putExtra(BUNDLE_EXTRA_SCORE, ratioGame);
                             setResult(RESULT_OK, intent);
                             finish();
                         }
@@ -278,7 +283,7 @@ public class PianoActivity extends AppCompatActivity implements View.OnClickList
                         public void onClick(DialogInterface dialog, int id) {
                             // Fin de l'ex et envoi du score
                             Intent intent = new Intent();
-                            intent.putExtra(BUNDLE_EXTRA_SCORE, mScore);
+                            intent.putExtra(BUNDLE_EXTRA_SCORE, ratioGame);
                             setResult(RESULT_OK, intent);
                             finish();
                         }

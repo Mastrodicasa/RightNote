@@ -33,14 +33,14 @@ public class Tab3Fragment extends Fragment {
                     this.setText("Let's hear the difference when a major third is replaced with a minor third.");
                     break;
                 case 21:
-                    this.setText("MANQUE LA GAMME\n"+"II Re? Re+Fa+La (minor)\n"
-                    +"V Sol? Sol+Si+Re (major)\n"+
-                    "All the chords are either minor or major, only the VII chord is different. But because it is an exception and it is rarely used, let's skip it at least for the moment.");
+                    this.setText("I (Do) - II (Re) - III (Mi) - IV (Fa) - V (Sol) - VI (La) - VII (Si) - I (Do)\n \n"+"II Re? Re + Fa + La (minor)\n"
+                    +"V Sol? Sol + Si + Re (major)\n \n"+
+                    "All the chords are either minor or major, only the VII chord is different. But because it is an exception and it is rarely used, let's skip it at least for the moment. \n \n \n \n");
                     break;
                 case 22:
                     this.setText("This cadence will be played two times when you click on the button Next.\n" +
                             "The first cadence is played only to prepare you, then at the second one you will have a point if you play the requested note when the chord starts to be played.\n"
-                            +"Except those moments, you can play any note you want.");
+                            +"Except those moments, you can play any note you want.\n \n \n \n \n");
                     break;
                 case 31:
                     this.setText("Because the V I cadence gives this end of sentence impression, we can reinforce that feeling by making the V more tense by transforming into a V7 chord.\n"

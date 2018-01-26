@@ -1,70 +1,77 @@
 
 <LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-tools:context="com.example.user.myapplication.PianoActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.user.myapplication.PianoActivity">
 
-<include
+    <include
         layout="@layout/custom_toolbar"
         android:id="@+id/toolbar"
-/>
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.07">
+    </LinearLayout>
 
-<TextView
+
+
+    <TextView
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_weight="0.3"
+        android:layout_height="0dp"
         android:text="La question que tout le monde se pose"
         android:textSize="25dp"
-        android:layout_gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/question"/>
 
-<RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
->
 
-    <ImageButton
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="33dp"
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_weight="0.65"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+
+        <ImageButton
             android:layout_width="80dp"
-            android:layout_height="170dp"
+            android:layout_height="match_parent"
             android:background="@drawable/buttonfileround"
             android:id="@+id/Do"
 
-    />
+            />
 
-    <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="36dp"
-            android:layout_marginTop="163dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginTop="135dp"
             android:text="Do"
             android:textStyle="bold"
             android:textSize="30sp"
             android:textColor="#607D8B"
             android:clickable="false"
             android:id="@+id/text_do"
-    />
+            />
 
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="80dp"
-            android:layout_height="170dp"
+            android:layout_height="match_parent"
             android:background="@drawable/buttonfile"
             android:id="@+id/Ré"
             android:layout_toRightOf="@+id/Do"
-    />
+            />
 
-    <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/text_do"
@@ -76,17 +83,17 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:textColor="#607D8B"
             android:clickable="false"
             android:id="@+id/text_re"
-    />
+            />
 
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="80dp"
-            android:layout_height="170dp"
+            android:layout_height="match_parent"
             android:background="@drawable/buttonfile"
             android:id="@+id/Mi"
             android:layout_toRightOf="@+id/Ré"/>
 
-    <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/text_do"
@@ -98,18 +105,18 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:textColor="#607D8B"
             android:clickable="false"
             android:id="@+id/text_mi"
-    />
+            />
 
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="80dp"
-            android:layout_height="170dp"
+            android:layout_height="match_parent"
             android:background="@drawable/buttonfile"
             android:id="@+id/Fa"
             android:layout_toRightOf="@+id/Mi"
-    />
+            />
 
-    <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/text_do"
@@ -121,18 +128,18 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:textColor="#607D8B"
             android:clickable="false"
             android:id="@+id/text_fa"
-    />
+            />
 
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="80dp"
-            android:layout_height="170dp"
+            android:layout_height="match_parent"
             android:background="@drawable/buttonfile"
             android:id="@+id/Sol"
             android:layout_toRightOf="@+id/Fa"
-    />
+            />
 
-    <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/text_do"
@@ -144,17 +151,17 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:textColor="#607D8B"
             android:clickable="false"
             android:id="@+id/text_sol"
-    />
+            />
 
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="80dp"
-            android:layout_height="170dp"
+            android:layout_height="match_parent"
             android:background="@drawable/buttonfile"
             android:id="@+id/La"
             android:layout_toRightOf="@+id/Sol"/>
 
-    <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/text_do"
@@ -166,17 +173,17 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:textColor="#607D8B"
             android:clickable="false"
             android:id="@+id/text_la"
-    />
+            />
 
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="80dp"
-            android:layout_height="170dp"
+            android:layout_height="match_parent"
             android:background="@drawable/buttonfileround"
             android:id="@+id/Si"
             android:layout_toRightOf="@+id/La"/>
 
-    <TextView
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/text_do"
@@ -188,9 +195,9 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:textColor="#607D8B"
             android:clickable="false"
             android:id="@+id/text_si"
-    />
+            />
 
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="40dp"
             android:layout_height="100dp"
@@ -199,7 +206,7 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:background="@drawable/buttonfiledies"
             android:id="@+id/Dod"
             android:layout_toRightOf="@+id/Do"/>
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="40dp"
             android:layout_height="100dp"
@@ -208,7 +215,7 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:background="@drawable/buttonfiledies"
             android:id="@+id/Réd"
             android:layout_toRightOf="@+id/Ré"/>
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="40dp"
             android:layout_height="100dp"
@@ -217,7 +224,7 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:background="@drawable/buttonfiledies"
             android:id="@+id/Fad"
             android:layout_toRightOf="@+id/Fa"/>
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="40dp"
             android:layout_height="100dp"
@@ -226,7 +233,7 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:background="@drawable/buttonfiledies"
             android:id="@+id/Sold"
             android:layout_toRightOf="@+id/Sol"/>
-    <ImageButton
+        <ImageButton
             android:layout_alignTop="@+id/Do"
             android:layout_width="40dp"
             android:layout_height="100dp"
@@ -235,6 +242,15 @@ tools:context="com.example.user.myapplication.PianoActivity">
             android:background="@drawable/buttonfiledies"
             android:id="@+id/Lad"
             android:layout_toRightOf="@+id/La"/>
-</RelativeLayout>
+    </RelativeLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.05">
+    </LinearLayout>
+
 
 </LinearLayout>

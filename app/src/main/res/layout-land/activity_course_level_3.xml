@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.myapplication.CourseLevel3Activity"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/custom_toolbar"
+        android:id="@+id/toolbar"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.12">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15">
+        </LinearLayout>
+        <Button
+            android:text="Seventh"
+            android:drawableTop="@mipmap/theory"
+            android:textSize="24sp"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/round_edge_green"
+            android:id="@+id/button2"
+            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.12">
+        </LinearLayout>
+
+        <Button
+            android:text="Exercise 1"
+            android:drawableTop="@mipmap/exercises"
+            android:textSize="24sp"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:id="@+id/button3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/round_edge_orange"
+            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.11">
+        </LinearLayout>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/round_edge_orange"
+            android:text="Exercise 2"
+            android:drawableTop="@mipmap/exercises"
+            android:textSize="24sp"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:id="@+id/button4"
+            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15">
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15">
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15">
+        </LinearLayout>
+        <Button
+            android:drawableTop="@mipmap/theory"
+            android:text="Backtrack"
+            android:textSize="24sp"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:background="@drawable/round_edge_green"
+            android:id="@+id/button5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.11">
+        </LinearLayout>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Exercise 3"
+            android:drawableTop="@mipmap/exercises"
+            android:textSize="24sp"
+            android:textAllCaps="false"
+            android:padding="10dp"
+            android:background="@drawable/round_edge_orange"
+            android:id="@+id/button6"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.26">
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.12">
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
+

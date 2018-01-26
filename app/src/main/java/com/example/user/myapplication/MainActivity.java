@@ -63,6 +63,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    // AJOUTER LANDSCAPE FILE DIRECTEMENT  + Modifier dans courselevel.Java pour Scores /t et /n
+    // MODIFIER FICHIERS XML ACTIVITY 1-2-3 pour aligner verticalement (JUSTE COPIER COLLER)
+    // Ajouter card horizontal pour diff xml
+    // Changer infos .java - cardinfo.xml contenu + images
+    // Charger xml weigth (copier coller)
+    // CHANGER bchord = button 5 dans course 3 + changer les TAG + Changer scores % etc (ecart)
+    // Ajouter Credits_activity et changer java + icone toolbar. Ajouter icone image + play dans xml
+    // Changer theory . Java. contenu texte + Ajouter margin left-right-top + with match parent xml
+    // Score en % aller changer dans piano JAva ratio game - changer dans intent.put extra (2x) + definir ratio game + changer => 80
+    //
+
+
+    // ORDONNER LES DOSSIERS (méthode blablabla)
+    // Credits
+
+
+
+
     @Override
     public void onClick(View v) {
 //        if (mp.isPlaying())

@@ -42,46 +42,49 @@ public class InfoActivity extends AppCompatActivity {
                 new ProductInfo(
                         1,
                         "What is RightNote?",
-                        R.mipmap.update,
-                        "RightNote is a music application equiped with a piano keyboard to " +
+                        R.mipmap.testquestion,
+                        "RightNote is a music application equipped with a piano keyboard to " +
                                 "simulate at best the reality. This keyboard represents " +
-                                "the fourth Octave of a real piano. In other words, it is the" +
+                                "the fourth Octave of a real piano. In other words, it is the " +
                                 "center part where the notes are classic. " +
-                                "The main goal of RightNote is to teach to people how to  " +
-                                "chose the good notes. For this, different types of exercises  \t" +
-                                " are available trough five levels of difficulty. "));
+                                "The main goal of RightNote is to teach to people how to " +
+                                "chose the good notes. For this, different types of exercises " +
+                                "are available trough five levels of difficulty. Moreover, " +
+                                "Recording enables you to play notes with a song in the background. " +
+                                "You can save it, replay it and even share it! "));
         productList.add(
 
                 new ProductInfo(
                 1,
                 "Why would you use this application?",
-                        R.mipmap.update,
-                "You don't need to be an expert in music because RightNote is a progressive \t" +
-                        "learn application. Moreover, theoretical aspects are recalled for each level.\t" +
-                        " This application goes further than simply recognise the music notes. Indeed, \t" +
-                        "you will have to imagine the following of the song. "));
+                        R.mipmap.testquestion,
+                "You don't need to be an expert in music because RightNote is a progressive " +
+                        "learning application. Moreover, theoretical aspects are recalled for each level. " +
+                        "This application goes further than simply recognise the music notes. Indeed, " +
+                        "you will have to find the good notes that would come after the notes played. "));
         productList.add(
 
                 new ProductInfo(
                 1,
-                "Who are the developers?",
+                "Who are the developpers?",
                         R.mipmap.who,
-                "RightNote has been created by Simon Mastrodicasa and Bertrand Thoumsin."));
+                "RightNote has been created by Simon Mastrodicasa and Bertrand Thoumsin.                                                                             "));
 
         productList.add(
                 new ProductInfo(
                 1,
                 "Which version is it?",
                 R.mipmap.update,
-                "This is the first version of RigthNote v1.1"));
+                "This is the first version of RigthNote v1.1                                                                                                          "));
 
         productList.add(
                 new ProductInfo(
                         1,
                         "Little tip",
-                        R.mipmap.update,
-                        "If you want to play freely with the piano without having any score, any question or whatever \t" +
-                                ", you should ffaire cacaiiijjj "));
+                        R.mipmap.idea,
+                        "If you want to play freely with the piano without having any score, any question or whatever" +
+                                ", go to Recording and don't put on Record. It is a good way to remember or to " +
+                                "learn the notes on a piano keyboard. "));
 
 
 
