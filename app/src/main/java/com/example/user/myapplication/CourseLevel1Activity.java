@@ -9,6 +9,8 @@ import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 
+import static java.lang.Math.floorDiv;
+
 public class CourseLevel1Activity extends AppCompatActivity implements View.OnClickListener {
 
     private Button bKeyboard;
