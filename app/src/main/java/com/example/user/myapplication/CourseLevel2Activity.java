@@ -34,7 +34,7 @@ public class CourseLevel2Activity extends AppCompatActivity implements View.OnCl
         //DEFINIR TOOLBAR
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Level 2");
+        getSupportActionBar().setTitle("Easy");
         getSupportActionBar().setIcon(getDrawable(R.drawable.course));
 
         bKeyboard=(Button) findViewById(R.id.button2);
@@ -96,27 +96,27 @@ public class CourseLevel2Activity extends AppCompatActivity implements View.OnCl
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (SCORE_EX21_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            Spanned text = Html.fromHtml("Exercise 1 <small> Score \t" +   Integer.toString(score) + "%");
+            Spanned text = Html.fromHtml("Exercise 1 \n <small> Score \t" +   Integer.toString(score) + "%");
             bEx1.setText(text);
         }
         else if (SCORE_EX22_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            Spanned text = Html.fromHtml("Exercise 2 <small> Score \t" +   Integer.toString(score) + "%");
+            Spanned text = Html.fromHtml("Exercise 2 \n <small> Score \t" +   Integer.toString(score) + "%");
             bEx2.setText(text);
         }
         else if (SCORE_EX23_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            Spanned text = Html.fromHtml("Exercise 3 <small> Score \t" +   Integer.toString(score) + "%");
+            Spanned text = Html.fromHtml("Exercise 3 \n <small> Score \t" +   Integer.toString(score) + "%");
             bEx3.setText(text);
         }
         else if (SCORE_TH21_REQUEST_CODE== requestCode && RESULT_OK == resultCode) {
             boolean read = data.getBooleanExtra(TheoryActivity.BUNDLE_EXTRA_READ, false);
-            Spanned text = Html.fromHtml("Scale <small> Read \t" );
+            Spanned text = Html.fromHtml("Scale \t \t  \n  \t \t \t  \t \t <small> \t \t  Read " );
             bKeyboard.setText(text);
         }
         else if (SCORE_TH22_REQUEST_CODE== requestCode && RESULT_OK == resultCode) {
             boolean read = data.getBooleanExtra(TheoryActivity.BUNDLE_EXTRA_READ, false);
-            Spanned text = Html.fromHtml("Cadence <small> Read \t" );
+            Spanned text = Html.fromHtml("Cadence \t \t \t \t    \t \t <small> Read " );
             bChord.setText(text);
         }
     }

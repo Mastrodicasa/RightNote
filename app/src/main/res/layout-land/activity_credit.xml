@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.user.myapplication.CreditActivity"
+>
+
+    <include
+            layout="@layout/custom_toolbar"
+            android:id="@+id/toolbar"
+    />
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:orientation="horizontal"
+                    android:background="#FFCA28"
+            >
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3">
+                </LinearLayout>
+
+                <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:id="@+id/credisimagesound"
+                        android:src="@mipmap/play"/>
+
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="30sp"
+                        android:textAllCaps="false"
+                        android:textColor="#000"
+                        android:text="Sound"
+                        android:gravity="center_vertical"
+                        android:id="@+id/creditsound"/>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.07">
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:layout_marginLeft="12dp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound1"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound2"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound3"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound4"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound5"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound6"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound7"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:orientation="horizontal"
+                    android:background="#D4E157"
+            >
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3">
+                </LinearLayout>
+
+                <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:id="@+id/credisimagesound2"
+                        android:src="@mipmap/image_credit"/>
+
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="30sp"
+                        android:textAllCaps="false"
+                        android:textColor="#000"
+                        android:text="Images"
+                        android:gravity="center_vertical"
+                        android:id="@+id/creditsound19"/>
+
+                <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.07">
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound8"/>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound9"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound10"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound11"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound12"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound13"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound14"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound15"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textSize="30sp"
+                    android:textAllCaps="false"
+                    android:textColor="#000"
+                    android:text="Sound"
+                    android:gravity="center_vertical"
+                    android:id="@+id/creditsound16"/>
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
+

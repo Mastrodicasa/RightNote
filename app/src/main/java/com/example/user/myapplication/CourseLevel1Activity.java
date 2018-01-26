@@ -34,7 +34,7 @@ public class CourseLevel1Activity extends AppCompatActivity implements View.OnCl
         //DEFINIR TOOLBAR
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
-        getSupportActionBar().setTitle("Level 1");
+        getSupportActionBar().setTitle("Novice");
         getSupportActionBar().setIcon(getDrawable(R.drawable.course));
 
         bKeyboard=(Button) findViewById(R.id.button2);
@@ -96,27 +96,27 @@ public class CourseLevel1Activity extends AppCompatActivity implements View.OnCl
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (SCORE_EX11_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            Spanned text = Html.fromHtml("Exercise 1 <small> Score \t" +   Integer.toString(score) + "%");
+            Spanned text = Html.fromHtml("Exercise 1 \n <small> Score \t" +   Integer.toString(score) + "%");
             bEx1.setText(text);
         }
         else if (SCORE_EX12_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            Spanned text = Html.fromHtml("Exercise 2 <small> Score \t" +   Integer.toString(score) + "%");
+            Spanned text = Html.fromHtml("Exercise 2 \n <small> Score \t" +   Integer.toString(score) + "%");
             bEx2.setText(text);
         }
         else if (SCORE_EX13_REQUEST_CODE == requestCode && RESULT_OK == resultCode) {
             int score = data.getIntExtra(PianoActivity.BUNDLE_EXTRA_SCORE, 0);
-            Spanned text = Html.fromHtml("Exercise 3 <small> Score \t" +   Integer.toString(score) + "%");
+            Spanned text = Html.fromHtml("Exercise 3 \n <small> Score \t" +   Integer.toString(score) + "%");
             bEx3.setText(text);
         }
         else if (SCORE_TH11_REQUEST_CODE== requestCode && RESULT_OK == resultCode) {
             boolean read = data.getBooleanExtra(TheoryActivity.BUNDLE_EXTRA_READ, false);
-            Spanned text = Html.fromHtml("Keyboard <small> Read \t" );
+            Spanned text = Html.fromHtml("Keyboard \t \t \t <small> Read " );
             bKeyboard.setText(text);
         }
         else if (SCORE_TH12_REQUEST_CODE== requestCode && RESULT_OK == resultCode) {
             boolean read = data.getBooleanExtra(TheoryActivity.BUNDLE_EXTRA_READ, false);
-            Spanned text = Html.fromHtml("Chord <small> Read \t" );
+            Spanned text = Html.fromHtml("Chord \t \t  \n  \t \t \t  \t \t <small> \t \t \t \t  Read" );
             bChord.setText(text);
         }
 

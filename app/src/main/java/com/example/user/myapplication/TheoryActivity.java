@@ -69,7 +69,7 @@ public class TheoryActivity extends AppCompatActivity {
                 getSupportActionBar().setTitle("Seventh");
                 getSupportActionBar().setIcon(getDrawable(R.drawable.theory));
             }else if(nbTh == 32){
-                getSupportActionBar().setTitle("Chord");
+                getSupportActionBar().setTitle("Backtrack");
                 getSupportActionBar().setIcon(getDrawable(R.drawable.theory));
             }
         }

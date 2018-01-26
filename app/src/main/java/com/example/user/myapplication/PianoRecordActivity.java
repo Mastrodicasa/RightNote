@@ -27,7 +27,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class PianoRecordActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -206,17 +209,6 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
             }
         });
 
-        shareButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Uri uri = Uri.parse(audioFilePath);
-                Intent share = new Intent(Intent.ACTION_SEND);
-                share.setType("audio/*");
-                share.putExtra(Intent.EXTRA_STREAM, uri);
-                startActivity(Intent.createChooser(share, "Share Sound File"));
-            }
-        });
-
 
         mb1.setTag(1);
         mb2.setTag(2);
@@ -230,6 +222,7 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
         mb10.setTag(10);
         mb11.setTag(11);
         mb12.setTag(12);
+        shareButton.setTag(13);
 
 
 
@@ -245,9 +238,11 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
         mb10.setOnClickListener(this);
         mb11.setOnClickListener(this);
         mb12.setOnClickListener(this);
+        shareButton.setOnClickListener(this);
 
         AlreadyLaunched=false;
         mediaRecorder = new MediaRecorder();
+
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
 
             ActivityCompat.requestPermissions(this,
@@ -279,6 +274,14 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
 
     }
 
+
+    //To avoid sound continuing playing outside the activity
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mp.isPlaying())
+            mp.stop();
+    }
 
     @Override
     public void onClick(View v) {
@@ -314,15 +317,56 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
         }else if(responseIndex == 12){
             mSoundPool.play(mSoundSi,1,1,0,0,1);
         }
+        //Share button
+        else if( responseIndex==13){
+            InputStream inputStream;
+            FileOutputStream fileOutputStream;
+            try {
+                inputStream = getResources().openRawResource(R.raw.backtrack);
+                fileOutputStream = new FileOutputStream(
+                        new File(Environment.getExternalStorageDirectory(), "backtrack.mp3"));
 
+                byte[] buffer = new byte[1024];
+                int length;
+                while ((length = inputStream.read(buffer)) > 0) {
+                    fileOutputStream.write(buffer, 0, length);
+                }
 
+                inputStream.close();
+                fileOutputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Send Your Improvisation")
+                    .setMessage("Challenge your friend or send the record?")
+                    .setNegativeButton("Challenge", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent sendIntent = new Intent();
+                            sendIntent.setAction(Intent.ACTION_SEND);
+                            sendIntent.putExtra(Intent.EXTRA_TEXT, "Can you improvise as well as me? Let's compare via Right Note! http://play.google.com/store/apps/details?id=com.google.android.apps.maps");
+                            sendIntent.setType("text/plain");
+                            startActivity(sendIntent);
 
+                        }
+                    })
+                    .setPositiveButton("Send", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            Intent intent = new Intent(Intent.ACTION_SEND);
+                            intent.putExtra(Intent.EXTRA_STREAM,
+                                    Uri.parse("file://" + Environment.getExternalStorageDirectory() + "/backtrack.mp3" ));
+                            intent.setType("audio/mp3");
+                            startActivity(Intent.createChooser(intent, "Share improvisation"));
 
+                        }
+                    })
+                    .setCancelable(true)
+                    .create()
+                    .show();
 
-
-        //Ma partie
-        //mp.start();
+        }
 
 
     }
@@ -351,6 +395,7 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
             mediaRecorder.setOutputFile(audioFilePath);
             mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
             mediaRecorder.prepare();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

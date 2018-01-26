@@ -13,40 +13,41 @@
             android:id="@+id/toolbar"
     />
 
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.04">
+    </LinearLayout>
+
     <TextView
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_marginTop="25dp"
+            android:layout_weight="0.1"
+            android:layout_height="0dp"
             android:text="Start Recording"
             android:textSize="25dp"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/question"/>
 
     <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:layout_height="150dp"
             android:orientation="vertical"
+            android:layout_gravity="center"
     >
 
         <ImageButton
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="25dp"
                 android:layout_width="80dp"
-                android:layout_height="150dp"
+                android:layout_height="146dp"
                 android:background="@drawable/buttonfileround"
                 android:id="@+id/Do"
-
         />
 
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="36dp"
-                android:layout_marginTop="135dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="105dp"
                 android:text="Do"
                 android:textStyle="bold"
                 android:textSize="30sp"
@@ -58,7 +59,7 @@
         <ImageButton
                 android:layout_alignTop="@+id/Do"
                 android:layout_width="80dp"
-                android:layout_height="150dp"
+                android:layout_height="146dp"
                 android:background="@drawable/buttonfile"
                 android:id="@+id/Ré"
                 android:layout_toRightOf="@+id/Do"
@@ -81,7 +82,7 @@
         <ImageButton
                 android:layout_alignTop="@+id/Do"
                 android:layout_width="80dp"
-                android:layout_height="150dp"
+                android:layout_height="146dp"
                 android:background="@drawable/buttonfile"
                 android:id="@+id/Mi"
                 android:layout_toRightOf="@+id/Ré"/>
@@ -103,7 +104,7 @@
         <ImageButton
                 android:layout_alignTop="@+id/Do"
                 android:layout_width="80dp"
-                android:layout_height="150dp"
+                android:layout_height="146dp"
                 android:background="@drawable/buttonfile"
                 android:id="@+id/Fa"
                 android:layout_toRightOf="@+id/Mi"
@@ -126,7 +127,7 @@
         <ImageButton
                 android:layout_alignTop="@+id/Do"
                 android:layout_width="80dp"
-                android:layout_height="150dp"
+                android:layout_height="146dp"
                 android:background="@drawable/buttonfile"
                 android:id="@+id/Sol"
                 android:layout_toRightOf="@+id/Fa"
@@ -149,7 +150,7 @@
         <ImageButton
                 android:layout_alignTop="@+id/Do"
                 android:layout_width="80dp"
-                android:layout_height="150dp"
+                android:layout_height="146dp"
                 android:background="@drawable/buttonfile"
                 android:id="@+id/La"
                 android:layout_toRightOf="@+id/Sol"/>
@@ -171,7 +172,7 @@
         <ImageButton
                 android:layout_alignTop="@+id/Do"
                 android:layout_width="80dp"
-                android:layout_height="150dp"
+                android:layout_height="146dp"
                 android:background="@drawable/buttonfileround"
                 android:id="@+id/Si"
                 android:layout_toRightOf="@+id/La"/>
@@ -239,7 +240,7 @@
         <Button
                 android:text="Record"
                 android:layout_below="@+id/Do"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_alignLeft="@+id/Do"
@@ -254,7 +255,7 @@
                 android:layout_below="@+id/Do"
                 android:layout_toRightOf="@+id/recordButton"
                 android:layout_marginLeft="100dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_alignLeft="@+id/Do"
@@ -269,7 +270,7 @@
                 android:layout_below="@+id/Do"
                 android:layout_toRightOf="@+id/recordButton"
                 android:layout_marginLeft="200dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_alignLeft="@+id/Do"
@@ -284,7 +285,7 @@
                 android:layout_below="@+id/Do"
                 android:layout_toRightOf="@+id/recordButton"
                 android:layout_marginLeft="300dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_alignLeft="@+id/Do"

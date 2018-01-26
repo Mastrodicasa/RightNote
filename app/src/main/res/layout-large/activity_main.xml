@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.user.myapplication.MainActivity">
+
+
+    <include
+            layout="@layout/custom_toolbar"
+            android:id="@+id/toolbar"
+    />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1">
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+    >
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1">
+        </LinearLayout>
+        <ImageView
+                android:id="@+id/imageMain"
+                android:src="@drawable/piano"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="4dp" />
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1">
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1">
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+    >
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1">
+        </LinearLayout>
+
+        <Button
+                android:text="Play"
+                android:textSize="50sp"
+                android:textAllCaps="false"
+                android:drawableTop="@mipmap/play"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/round_edge_green"
+                android:padding="40dp"
+                android:id="@+id/button_play"/>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1">
+        </LinearLayout>
+        <Button
+                android:text="Infos"
+                android:layout_below="@+id/imageMain"
+                android:textSize="45sp"
+                android:textAllCaps="false"
+                android:drawableTop="@mipmap/infos"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/round_edge_purple"
+                android:padding="40dp"
+                android:id="@+id/button_settings"/>
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1">
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2">
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+    >
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1">
+        </LinearLayout>
+        <Button
+                android:text="Recording"
+                android:textSize="45sp"
+                android:textAllCaps="false"
+                android:drawableTop="@mipmap/recording"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/round_edge_blue"
+                android:padding="28dp"
+                android:id="@+id/button_scores"/>
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1">
+        </LinearLayout>
+        <Button
+                android:text="Credits"
+                android:textSize="45sp"
+                android:textAllCaps="false"
+                android:drawableTop="@mipmap/copyright"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/round_edge_orange"
+                android:padding="28dp"
+                android:id="@+id/button_credits"/>
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1">
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2">
+    </LinearLayout>
+
+</LinearLayout>
