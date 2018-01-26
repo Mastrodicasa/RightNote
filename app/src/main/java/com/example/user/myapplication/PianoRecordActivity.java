@@ -201,6 +201,7 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View v) {
                 try {
+                    mp = MediaPlayer.create(PianoRecordActivity.this, R.raw.backtrack_3fois);
                     recordAudio(v);
                     mp.start();
                 } catch (IOException e) {
@@ -380,8 +381,6 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
     {
 
 
-
-
         isRecording = true;
         stopButton.setEnabled(true);
         playButton.setEnabled(false);
@@ -411,6 +410,7 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
         //Ca ne marche pas mais ce serait bien de l'arreter
         if(mp.isPlaying())
             mp.stop();
+
 
         stopButton.setEnabled(false);
         playButton.setEnabled(true);
