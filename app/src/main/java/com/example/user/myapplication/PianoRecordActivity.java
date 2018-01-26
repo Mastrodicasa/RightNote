@@ -387,7 +387,7 @@ public class PianoRecordActivity extends AppCompatActivity implements View.OnCli
         playButton.setEnabled(false);
         recordButton.setEnabled(false);
         shareButton.setEnabled(false);
-
+//
         try {
             mediaRecorder = new MediaRecorder();
             mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
